@@ -1,3 +1,30 @@
+:root {
+  /*  Font Family */
+  --font-josefin-sans: "Josefin Sans", serif;
+
+  /* Font Sizes  */
+  /* 15 -> 16 | 16 -> 18 | 20 -> 24 | 24 -> 32 | 32 -> 48 */
+  --fs-100: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
+  --fs-200: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+  --fs-300: clamp(1.25rem, 1.163rem + 0.4348vi, 1.5rem);
+  --fs-400: clamp(1.5rem, 1.3261rem + 0.8696vi, 2rem);
+  --fs-500: clamp(2rem, 1.6522rem + 1.7391vi, 3rem);
+
+  /* Spacing */
+  /* 16 -> 18 | 20 -> 24 | 24 -> 32 | 32 -> 48 | 48 -> 80 */
+  --spacing-100: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+  --spacing-200: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+  --spacing-300: clamp(1.5rem, 1.3261rem + 0.8696vi, 2rem);
+  --spacing-400: clamp(2rem, 1.6522rem + 1.7391vi, 3rem);
+  --spacing-500: clamp(3rem, 2.3043rem + 3.4783vi, 5rem);
+
+  /* 16 -> 18  */
+  --flow-space: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+
+  /* 16 -> 18 */
+  --gap: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -5,13 +32,14 @@
   box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
+/* 2. Remove default margin and padding */
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: "Josefin Sans", serif;
+  font-family: var(--font-josefin-sans);
   /* 3. Add accessible line-height */
   line-height: 1.5;
   /* 4. Improve text rendering */
@@ -51,6 +79,7 @@ h6 {
 p {
   text-wrap: pretty;
 }
+
 h1,
 h2,
 h3,
@@ -66,4 +95,65 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* Flow Utility */
+.flow > * + * {
+  margin-top: var(--flow-space);
+}
+
+/* Flexbox Utility */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/* Grid Utility */
+.grid {
+  display: grid;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+/* Gap Utility Class */
+.gap {
+  gap: var(--spacing-200);
+}
+
+/* Font Sizes */
+.fs-100 {
+  font-size: var(--fs-100);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-300);
+}
+
+.fs-500 {
+  font-size: var(--fs-300);
 }
